@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Mainbox"> 
+        
+    </div>
+
+</body>
+</html>
+<script> 
+
+async function getData() {
+    let url ="https://www.themealdb.com/api/json/v1/1/filter.php?a=indian"
+
+let res = await fetch(url)
+
+let data=await res.json()
+let meal=data.meals
+console.log(meal)
+displaydata(meal)
+}
+getData()
+
+let divtag = document.getElementById("Mainbox")
+function displaydata(arr){
+    arr.map(function(elem){
+        let div=document.createElement("div")
+        let img =document.createElement("img")
+        let name =document.createElement("h2")
+        let price=document.createElement("h2")
+        let button=document.createElement("button")
+        button.addEventListener("click", addfn)
+
+        img.src=elem.strMealThumb
+        name.innerText=elem.strMeal
+        price.innertext=Math.floor(Math.random()*500)
+        button.innerText="Add To Cart"
+
+        div.append(img,name,price,button)
+        divtag.append(div)
+    })
+}
+ function addfn(){
+     alert("sucsesful")
+     window.location.href="checkout.html"
+ }
+
+</script>

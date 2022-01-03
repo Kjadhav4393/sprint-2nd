@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    #payment{
+        width: 30%;
+        height: 200px;
+        margin: auto;
+        border: 1px solid black;
+        text-align: center;
+        background-color: black;
+    }
+    #payment > div {
+        font-size: 20px;
+        /* margin-left: 40px; */
+        color: blanchedalmond;
+    }
+    #payment > input {
+        width: 50%;
+        height: 20px;
+        margin: auto;
+    }
+    #submit{
+        margin-top: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="payment"> 
+        <div> Card Number </div>
+        <input type="number" id="cardNo">
+        <div> CVV </div>
+        <input type="number" id="cvv">
+        <div> Exipry Date </div>
+        <input type="date" id="date">
+
+        <div id="submit"> 
+            <a href=""><button onclick="getdata()"> Submit </button></a>
+            <button>CANCEL</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="checkout.js"> </script>
